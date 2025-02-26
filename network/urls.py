@@ -1,0 +1,13 @@
+from django.urls import path, include
+from rest_framework.routers import SimpleRouter
+from network.apps import NetworkConfig
+from network.views import NetworkNodeViewSet
+
+app_name = NetworkConfig.name
+
+router = SimpleRouter()
+router.register(r"network", NetworkNodeViewSet, basename="network")
+
+urlpatterns = [
+    path("", include(router.urls))
+]
