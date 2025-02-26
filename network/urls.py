@@ -6,7 +6,7 @@ from network.views import NetworkNodeViewSet
 app_name = NetworkConfig.name
 
 router = SimpleRouter()
-router.register(r"network", NetworkNodeViewSet, basename="network")
+router.register(r"nodes", NetworkNodeViewSet, basename="nodes")
 
 urlpatterns = [
     path("", include(router.urls)),

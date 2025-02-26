@@ -8,12 +8,12 @@ from rest_framework.permissions import AllowAny
 app_name = UsersConfig.name
 
 router = SimpleRouter()
-router.register("users", CustomUserViewSet, basename="user")
+router.register("", CustomUserViewSet, basename="user")
 
 urlpatterns = [
-    path("API/register/", CustomUserCreateAPIView.as_view(), name="register"),
-    path("API/login/", TokenObtainPairView.as_view(permission_classes=(AllowAny,)), name="login"),
-    path("API/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/register/", CustomUserCreateAPIView.as_view(), name="register"),
+    path("api/login/", TokenObtainPairView.as_view(permission_classes=(AllowAny,)), name="login"),
+    path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 urlpatterns += router.urls
