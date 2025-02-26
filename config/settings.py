@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
     "users",
     "network",
+    "product",
 
     "rest_framework",
     "rest_framework_simplejwt",

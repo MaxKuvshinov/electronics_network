@@ -9,5 +9,5 @@ router = SimpleRouter()
 router.register(r"network", NetworkNodeViewSet, basename="network")
 
 urlpatterns = [
-    path("", include(router.urls))
+    path("", include(router.urls)),
 ]
