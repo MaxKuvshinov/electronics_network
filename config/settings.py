@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "users",
+    "network",
 
     "rest_framework",
     "rest_framework_simplejwt",
@@ -80,7 +81,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsActivEmployee",
+        "users.permissions.IsActiveEmployee",
     ],
 }
 
