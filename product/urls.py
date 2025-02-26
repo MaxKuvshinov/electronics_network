@@ -6,7 +6,7 @@ from product.views import ProductViewSet
 app_name = ProductConfig.name
 
 router = SimpleRouter()
-router.register(r"product", ProductViewSet, basename="product")
+router.register("", ProductViewSet, basename="product")
 
 urlpatterns = [
     path("", include(router.urls)),

@@ -10,8 +10,8 @@ class NetworkNodeViewSet(viewsets.ModelViewSet):
     serializer_class = NetworkNodeSerializer
     permission_classes = [IsActiveEmployee]
     filter_backends = [DjangoFilterBackend]
-    filterset_field = ["country"]
+    filterset_fields = ["country"]
 
     def get_queryset(self):
-        return NetworkNode.objects.select_related("supplier").prefetch_related("products")
+        return NetworkNode.objects.select_related("supplier").prefetch_related("product")
 

@@ -18,14 +18,14 @@ class NetworkNode(models.Model):
     street = models.CharField(max_length=255, verbose_name="Улица")
     house_number = models.CharField(max_length=10, verbose_name="Номер дома")
     debt = models.DecimalField(max_digits=12, decimal_places=2, default=0.00, validators=[MinValueValidator(0.00)], verbose_name="Задолженность")
-    create_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     class Meta:
         verbose_name = "Участник сети"
         verbose_name_plural = "Участники сети"
 
     def __str__(self):
-        return self.name 
+        return self.name
 
 
 

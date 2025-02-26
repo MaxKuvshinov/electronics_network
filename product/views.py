@@ -8,9 +8,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    permission_classes = IsActiveEmployee
+    permission_classes = [IsActiveEmployee]
     filter_backends = [DjangoFilterBackend]
-    filterset_field = ["name", "model", "release_date"]
+    filterset_fields = ["name", "model", "release_date"]
 
     def get_queryset(self):
         return Product.objects.select_related("network_node")

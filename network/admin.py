@@ -10,7 +10,7 @@ def clear_debt(modeladmin, request, queryset):
 
 @admin.register(NetworkNode)
 class NetworkNodeAdmin(admin.ModelAdmin):
-    list_display = ("name", "city", "level", "supplier", "debt", "create_at",)
+    list_display = ("name", "city", "level", "supplier", "debt", "created_at",)
     list_filter = ("city", "level", "country",)
     search_fields = ("name", "email",)
     actions = [clear_debt]
