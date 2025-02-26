@@ -7,4 +7,3 @@ from product.models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("name", "model", "release_date", "network_node")
     search_fields = ("name", "model")
-    

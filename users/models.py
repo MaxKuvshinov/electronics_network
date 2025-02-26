@@ -4,7 +4,9 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     username = None
-    email = models.EmailField(unique=True, verbose_name="Email", help_text="Укажите Email")
+    email = models.EmailField(
+        unique=True, verbose_name="Email", help_text="Укажите Email"
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

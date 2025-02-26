@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAdminUser
@@ -5,7 +6,6 @@ from rest_framework.permissions import IsAdminUser
 from users.models import CustomUser
 from users.permissions import IsActiveEmployee
 from users.serializers import CustomUserSerializer
-from django_filters.rest_framework import DjangoFilterBackend
 
 
 class CustomUserViewSet(viewsets.ModelViewSet):

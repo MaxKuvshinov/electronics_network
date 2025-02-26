@@ -31,7 +31,9 @@ class Command(BaseCommand):
 
         try:
             if CustomUser.objects.filter(email=email).exists():
-                self.stdout.write(self.style.WARNING(f"Пользователь с email {email} уже существует."))
+                self.stdout.write(
+                    self.style.WARNING(f"Пользователь с email {email} уже существует.")
+                )
                 return
 
             user = CustomUser(email=email)
@@ -41,7 +43,11 @@ class Command(BaseCommand):
             user.is_superuser = True
             user.save()
 
-            self.stdout.write(self.style.SUCCESS(f"Суперпользователь с email {email} успешно создан"))
+            self.stdout.write(
+                self.style.SUCCESS(f"Суперпользователь с email {email} успешно создан")
+            )
 
         except ValidationError as e:
-            self.stdout.write(self.style.ERROR(f"Ошибка при создании пользователя: {e}"))
+            self.stdout.write(
+                self.style.ERROR(f"Ошибка при создании пользователя: {e}")
+            )
